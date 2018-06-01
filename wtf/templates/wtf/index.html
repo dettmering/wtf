@@ -3,13 +3,13 @@
 <h1>My life&rsquo;s most important KPI is &lsquo;WTFs per day&rsquo;.</h1>
 
 <p>
-    Today, 2018-06-01
+    {% now "F jS, Y" %}
 </p>
 <p>
     {{ wtfs.count }}
 </p>
 <p>
-    WTFs
+    WTF{% if wtfs.count != 1 %}s{% endif %}
 </p>
 
 <h2>Today&rsquo;s WTFs</h2>
