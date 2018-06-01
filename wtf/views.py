@@ -1,7 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
 
-#from .models import StockItem, Pantry
+from .models import *
 
 def index(request):
     context = { }
