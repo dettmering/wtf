@@ -8,8 +8,10 @@ from .forms import *
 
 from .key_generator import *
 
+from datetime import date
+
 def index(request):
-    wtfs = WTF.objects.all()
+    wtfs = WTF.objects.filter(created_timestamp__date=date.today())
 
     context = {
         'wtfs': wtfs,
