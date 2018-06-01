@@ -12,4 +12,14 @@
     WTFs
 </p>
 
+<h2>Today&rsquo;s WTFs</h2>
+
+<ul>
+    {% for wtf in wtfs %}
+        <li>
+            {{ wtf.content }} (<a href="/wtf/{{ wtf.short }}">link</a>)
+        </li>
+    {% endfor%}
+</ul>
+
 {% endblock %}
