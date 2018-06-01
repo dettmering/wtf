@@ -1,18 +1,18 @@
 {% extends "./base.html" %} {% block title %}WTF{% endblock %} {% block content %} {% load static %}
 
-<h1>My life&rsquo;s most important KPI is &lsquo;WTFs per day&rsquo;.</h1>
+<h3>My life&rsquo;s most important KPI is &lsquo;WTFs per day&rsquo;.</h3>
 
-<p>
+<p class="wtf-date">
     {% now "F jS, Y" %}
 </p>
-<p>
+<p class="wtf-count">
     {{ wtfs.count }}
 </p>
-<p>
+<p class="wtf-unit">
     WTF{% if wtfs.count != 1 %}s{% endif %}
 </p>
 
-<h2>Today&rsquo;s WTFs</h2>
+<h5>Today&rsquo;s WTFs</h5>
 
 <ul>
     {% for wtf in wtfs %}
