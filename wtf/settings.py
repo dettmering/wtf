@@ -13,6 +13,13 @@ import os
 import dj_database_url
 import django_heroku
 
+def boolenv(env, fallback):
+    if env in os.environ:
+        var = os.environ.get(env)
+        return var.lower() in ("yes", "true", "t", "1")
+    else:
+        return fallback
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -22,10 +29,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "63a!la^8hj3km+=8-+m&x8-7*_fyav(f!xc^r$7i&72nf^2vy="
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '63a!la^8hj3km+=8-+m&x8-7*_fyav(f!xc^r$7i&72nf^2vy=')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = boolenv('DJANGO_DEBUG', True)
 
 # Application definition
 
