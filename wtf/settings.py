@@ -58,7 +58,7 @@ ROOT_URLCONF = 'wtf.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['wtf/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
