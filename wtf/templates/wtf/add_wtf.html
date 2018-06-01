@@ -1,0 +1,8 @@
+{% extends "./base.html" %} {% block title %}WTF?{% endblock %} {% block content %}
+
+<form class="form" method="post" action="/add/" enctype="multipart/form-data">
+    {% csrf_token %} {{ form }}
+    <input type="submit" class="btn btn-primary" value="WTF!" />
+</form>
+
+{% endblock %}
