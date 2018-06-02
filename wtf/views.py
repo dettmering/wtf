@@ -20,6 +20,7 @@ def index(request):
     template = loader.get_template('wtf/index.html')
     return HttpResponse(template.render(context, request))
 
+@login_required
 def add_wtf(request):
     if request.method == 'POST':
         form = AddWTFForm(request.POST)
