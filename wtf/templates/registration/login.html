@@ -1,20 +1,16 @@
 {% extends "../wtf/base.html" %} {% block title %}Welcome to Thoth{% endblock %} {% block content %}
-    <div class="row">
-        <h2>
-            Login
-        </h2>
-    </div>
-    <div class="row">
-        <form method="post">
-            <div class="form-group">
-                <table>
-                    {% csrf_token %} {{ form }}
-                </table>
-
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-    </div>
+<div class="row">
+    <h2>
+        Login
+    </h2>
+</div>
+<div class="row">
+    <form method="post">
+        {% csrf_token %} {{ form }}
+        <br />
+        <button type="submit" class="button-primary">Login</button>
+    </form>
+</div>
 
 </div>
 {% endblock %}
