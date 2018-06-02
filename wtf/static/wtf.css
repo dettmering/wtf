@@ -1,0 +1,41 @@
+p !important {
+    font-family: "Quicksand";
+}
+
+.wtf-title {
+    font-family: "Abril Fatface";
+    margin-top: 80px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.wtf-date {
+    text-align: center;
+    font-style: italic;
+    margin-top: 40px;
+    margin-bottom: -10px;
+}
+
+.wtf-count {
+    font-family: "Abril Fatface";
+
+    text-align: center;
+    font-size: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+.wtf-unit {
+    font-family: "Abril Fatface";
+
+    text-align: center;
+    font-size: 30px;
+    margin-top: -30px;
+}
+
+.wtf-today {
+    font-family: "Abril Fatface";
+    margin-top: 80px;
+    text-align: center;
+    font-size: 30px;
+}

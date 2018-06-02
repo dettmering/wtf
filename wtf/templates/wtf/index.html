@@ -1,25 +1,30 @@
 {% extends "./base.html" %} {% block title %}WTF{% endblock %} {% block content %} {% load static %}
 
-<h3>My life&rsquo;s most important KPI is &lsquo;WTFs per day&rsquo;.</h3>
+<div class="row">
+    <h1 class="wtf-title">My life&rsquo;s most important KPI is &lsquo;WTFs per day&rsquo;.</h1>
 
-<p class="wtf-date">
-    {% now "F jS, Y" %}
-</p>
-<p class="wtf-count">
-    {{ wtfs.count }}
-</p>
-<p class="wtf-unit">
-    WTF{% if wtfs.count != 1 %}s{% endif %}
-</p>
+    <p class="wtf-date">
+        {% now "F jS, Y" %}
+    </p>
+    <p class="wtf-count">
+        {{ wtfs.count }}
+    </p>
+    <p class="wtf-unit">
+        WTF{% if wtfs.count != 1 %}s{% endif %}
+    </p>
+</div>
 
-<h5>Today&rsquo;s WTFs</h5>
+<div class="row">
+    <h2 class="wtf-today">&#x1F4A9; Today&rsquo;s WTFs &#x1F4A9;</h2>
 
-<ul>
-    {% for wtf in wtfs %}
+    <ul>
+        {% for wtf in wtfs %}
         <li>
-            {{ wtf.content }} (<a href="/wtf/{{ wtf.short }}">link</a>)
+            {{ wtf.content }}
         </li>
-    {% endfor%}
-</ul>
+        {% endfor%}
+    </ul>
+</div>
+
 
 {% endblock %}
