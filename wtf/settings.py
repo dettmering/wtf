@@ -134,7 +134,7 @@ STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'wtf/static/wtf'),
+    os.path.join(BASE_DIR, 'wtf/static'),
 ]
 
 # Simplified static file serving.
