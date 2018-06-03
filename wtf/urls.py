@@ -6,6 +6,7 @@ from . import views, api
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('day/<str:day>', views.day),
     path('', views.index),
     path('add/', views.add_wtf),
     path('api/today', api.today),

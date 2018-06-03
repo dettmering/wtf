@@ -4,7 +4,7 @@
     <h1 class="wtf-title">My life&rsquo;s most important KPI is &lsquo;WTFs per day&rsquo;.</h1>
 
     <p class="wtf-date">
-        {% now "F jS, Y" %}
+        {{ date }}
     </p>
     <p class="wtf-count">
         {{ wtfs.count }}

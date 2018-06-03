@@ -10,15 +10,23 @@ from .key_generator import *
 
 from datetime import date
 
-def index(request):
-    wtfs = WTF.objects.filter(created_timestamp__date=date.today())
+def index(request, day=date.today()):
+    wtfs = WTF.objects.filter(created_timestamp__date=day)
 
     context = {
         'wtfs': wtfs,
+        'date': day,
     }
 
     template = loader.get_template('wtf/index.html')
     return HttpResponse(template.render(context, request))
+
+def day(request, day):
+    # Format YYYYMMDD
+
+    thedate = date(int(day[0:4]), int(day[4:6]), int(day[6:8]))
+
+    return index(request, thedate)
 
 @login_required
 def add_wtf(request):
