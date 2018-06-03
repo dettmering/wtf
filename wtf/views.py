@@ -31,6 +31,16 @@ def day(request, day):
 
     return index(request, thedate)
 
+def single(request, id):
+    wtf = WTF.objects.get(short=id)
+
+    context = {
+        'wtf': wtf,
+    }
+
+    template = loader.get_template('wtf/single.html')
+    return HttpResponse(template.render(context, request))
+
 @login_required
 def add_wtf(request):
     if request.method == 'POST':
