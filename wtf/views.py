@@ -24,7 +24,10 @@ def index(request, day=date.today()):
 def day(request, day):
     # Format YYYYMMDD
 
-    thedate = date(int(day[0:4]), int(day[4:6]), int(day[6:8]))
+    try:
+        thedate = date(int(day[0:4]), int(day[4:6]), int(day[6:8]))
+    except:
+        thedate = date.today()
 
     return index(request, thedate)
 
