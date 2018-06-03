@@ -11,7 +11,7 @@ class Tag(models.Model):
 class WTF(models.Model):
     created_timestamp = models.DateTimeField(auto_now_add=True)
     content = models.CharField(max_length=500)
-    tags = models.ManyToManyField(Tag, blank=True, null=True)
+    tags = models.ManyToManyField(Tag, blank=True)
     short = models.CharField(max_length=8)
 
     def __str__(self):
