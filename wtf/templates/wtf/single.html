@@ -1,3 +1,11 @@
-{{ wtf.content }}
-<br />
-{{ wtf.created_timestamp }}
+{% extends "./base.html" %} {% block title %}WTF{% endblock %} {% block content %} {% load static %}
+
+<div class="row">
+    <h1 class="wtf-title">{{ wtf.content }}</h1>
+
+    <p class="wtf-date">
+        {{ wtf.created_timestamp }}
+    </p>
+</div>
+
+{% endblock %}
