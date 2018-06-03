@@ -2,6 +2,8 @@ p !important {
     font-family: "Quicksand";
 }
 
+ul { list-style-type: "💩"; }
+
 .wtf-title {
     font-family: "Abril Fatface";
     margin-top: 80px;
